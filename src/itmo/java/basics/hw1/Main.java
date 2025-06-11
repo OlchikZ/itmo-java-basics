@@ -23,7 +23,7 @@ public class Main {
     public static void point2() {
         System.out.println("");
         System.out.println("Point 2");
-        double a = (46 + 10) * (10 / 3);
+        double a = (46 + 10) * (10.0 / 3);
         System.out.println(a);
         double b = (29) * (4) * (-15);
         System.out.println(b);
@@ -33,7 +33,7 @@ public class Main {
         System.out.println("");
         System.out.println("Point 3");
         int number = 10500;
-        double result = (number / 10) / 10;
+        double result = (number / 10.0) / 10;
         System.out.println(result);
     }
 
