@@ -1,9 +1,6 @@
 package itmo.java.basics.hw2;
 
 public class Calculator {
-    private Double num1;
-    private Double num2;
-
     public Calculator() {
     }
 
