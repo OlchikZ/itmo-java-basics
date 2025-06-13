@@ -44,12 +44,12 @@ public class Calculator {
     }
 
     // ДЕЛЕНИЕ
-    public int divide(int num1, int num2) {
-        return num1 / num2; // предполагается, что b != 0
+    public double divide(int num1, int num2) {
+        return (double) num1 / num2; // предполагается, что b != 0
     }
 
-    public long divide(long num1, long num2) {
-        return num1 / num2;
+    public double divide(long num1, long num2) {
+        return (double) num1 / num2;
     }
 
     public double divide(double num1, double num2) {

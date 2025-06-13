@@ -27,7 +27,7 @@ public class Main {
 
         // ДЕЛЕНИЕ
         System.out.println("Деление (int): " + calculator.divide(10, 2));
-        System.out.println("Деление (long): " + calculator.divide(10000000000L, 2L));
+        System.out.println("Деление (long): " + calculator.divide(2L, 10000000000L));
         System.out.println("Деление (double): " + calculator.divide(7.5, 2.5));
     }
 
