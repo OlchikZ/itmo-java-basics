@@ -1,4 +1,4 @@
-package itmo.java.basics.hw1;
+package itmo.java.basics.hw.hw1;
 
 import java.util.Scanner;
 
