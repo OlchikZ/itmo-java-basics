@@ -5,9 +5,9 @@ import java.util.Scanner;
 
 public class Part2 {
     public static void main(String[] agrs) {
-        //point1();
-        //point2();
-        //point3();
+        point1();
+        point2();
+        point3();
         point4();
     }
 
