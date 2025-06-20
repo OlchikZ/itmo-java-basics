@@ -46,6 +46,10 @@ public class Part1 {
         System.out.println("Делятся на 3 и на 5: " + by3and5);
     }
 
+    public static boolean isSumEqualToThird(int a, int b, int c) {
+        return a + b == c;
+    }
+
     public static void point3() {
         System.out.println("Point 3");
         Scanner scanner = new Scanner(System.in);
@@ -58,11 +62,13 @@ public class Part1 {
         System.out.println("Введите третье число ");
         int num3 = scanner.nextInt();
 
-        boolean result = (num1 + num2 == num3);
-
-        System.out.println("Результат " + result);
+        boolean result = isSumEqualToThird(num1, num2, num3);
+        System.out.println("Результат: " + result);
     }
 
+    public static boolean isThirdBiggest(int a, int b, int c) {
+        return a > b && c > b;
+    }
     public static void point4() {
         System.out.println("Point 4");
         Scanner scanner = new Scanner(System.in);
@@ -75,9 +81,12 @@ public class Part1 {
         System.out.println("Введите третье число ");
         int num3 = scanner.nextInt();
 
-        boolean result = (num2 > num1 && num3 > num2);
+        boolean result = isThirdBiggest(num1, num2, num3);
+        System.out.println("Результат: " + result);
+    }
 
-        System.out.println("Результат " + result);
+    public static boolean isThreeFirstOrLast(int a, int b) {
+        return a == 3 || b == 3;
     }
 
     public static void point5(){
@@ -95,7 +104,8 @@ public class Part1 {
             System.out.println("Введите " + i + " элемент: ");
             ints[i] = scanner.nextInt();
         }
-        boolean result = (ints[0] == 3 || ints[length-1] == 3);
+
+        boolean result = isThreeFirstOrLast(ints[0], ints[length-1]);
         System.out.println("array = " + Arrays.toString(ints));
         System.out.println("Результат " + result);
     }
