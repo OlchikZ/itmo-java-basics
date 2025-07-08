@@ -5,17 +5,12 @@ import java.util.Map;
 public class SearchPlayer {
 
     public static void searchPlayer(Map<User, Integer> map, String inputName) {
-        boolean found = false;
+        User key = new User(inputName); // создаём ключ
 
-        for (User user : map.keySet()) {
-            if (user.getName().equalsIgnoreCase(inputName)) {
-                System.out.println("Очки игрока " + user.getName() + ": " + map.get(user));
-                found = true;
-                break;
-            }
-        }
-
-        if (!found) {
+        if (map.containsKey(key)) {
+            int score = map.get(key);
+            System.out.println("Очки игрока " + inputName + ": " + score);
+        } else {
             System.out.println("Участника с таким именем нет.");
         }
     }
