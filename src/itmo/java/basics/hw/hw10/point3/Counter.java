@@ -1,14 +1,17 @@
 package itmo.java.basics.hw.hw10.point3;
 
-public class Counter {
-    int count = 0;
+import java.util.concurrent.atomic.AtomicInteger;
 
-    //increment() не является потокобезопасным, 1 поток может переписать, поэтому добавила synchronized
-    public synchronized void increment() {
-        count = count + 1;
+public class Counter {
+    private final AtomicInteger count = new AtomicInteger(0);
+
+    public void increment() {
+        count.incrementAndGet();
     }
 
     public int getCount() {
-        return count;
+        return count.get();
     }
 }
+
+

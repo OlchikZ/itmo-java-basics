@@ -1,27 +1,30 @@
 package itmo.java.basics.hw.hw10.point3;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
+
 public class CounterTaskRunner {
-    public void run() throws InterruptedException {
+    public void runCounterTask() {
         Counter counter = new Counter();
-        Thread[] threads = new Thread[100];
+        ExecutorService executor = Executors.newFixedThreadPool(100);
 
         for (int i = 0; i < 100; i++) {
-            threads[i] = new Thread(() -> {
+            executor.submit(() -> {
                 for (int j = 0; j < 1000; j++) {
                     counter.increment();
                 }
             });
         }
 
-        for (Thread thread : threads) {
-            thread.start();
-        }
+        executor.shutdown();
 
-        for (Thread thread : threads) {
-            thread.join();
+        try {
+            executor.awaitTermination(1, TimeUnit.MINUTES);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
 
         System.out.println("Фактическое значение: " + counter.getCount());
     }
 }
-
