@@ -27,4 +27,5 @@ public class CounterTaskRunner {
 
         System.out.println("Фактическое значение: " + counter.getCount());
     }
+
 }
